@@ -2,12 +2,23 @@
 APK-файл для установки доступен во вкладке `Releases`
 
 <p float="left">
-  <img src="/preview/home_dark.jpg" width="330" />
-  <img src="/preview/home_light.jpg" width="330" /> 
-  <img src="/preview/preview_dark.jpg" width="330" />
+  <img src="/preview/main.jpg" width="330" />
+  <img src="/preview/details.jpg" width="330" /> 
+  <img src="/preview/favorite.jpg" width="330" />
 </p>
 
 ## Фичи
+
+### Задание 2
+- [x] Реализован механизм сохранения избранных новостных статей
+- [x] Использован [Bloc](https://pub.dev/packages/flutter_bloc) реализации управления состоянием UI
+- [x] Разделение проекта на слои и декомпозиция логики
+- [ ] Написан Unit-тест для ключевой функции в приложении 
+- [x] Реализован DI с использованием одного из общепринятых подходов
+- [ ] Интеграцонные тесты
+- [ ] Виджет тесты на ключевые виджеты
+
+### Задание 1
 - [x] Поддержка темной и светлой темы
 - [x] Получение данных [из API](https://newsapi.org/)
 - [x] Модели данных сгенерированы [freezed](https://pub.dev/packages/freezed)

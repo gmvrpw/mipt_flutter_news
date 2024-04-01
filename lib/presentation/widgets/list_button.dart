@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mipt_flutter_news/themes/themes.dart';
+import 'package:mipt_flutter_news/presentation/themes/themes.dart';
 
 class ListButton extends StatelessWidget {
   const ListButton({required this.label, this.onTap, super.key});

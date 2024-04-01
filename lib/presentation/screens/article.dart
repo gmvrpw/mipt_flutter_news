@@ -1,18 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:mipt_flutter_news/models/article.dart';
-import 'package:mipt_flutter_news/themes/themes.dart';
-import 'package:mipt_flutter_news/widgets/article_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mipt_flutter_news/domain/model/article.dart';
+import 'package:mipt_flutter_news/domain/state/favorite.dart';
+import 'package:mipt_flutter_news/presentation/themes/themes.dart';
+import 'package:mipt_flutter_news/presentation/widgets/article_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ArticleScreen extends StatelessWidget {
   const ArticleScreen({required this.article, super.key});
 
-  final ArticleModel article;
+  final Article article;
 
   Future<void> _launchUrl() async {
-    if (!await launchUrl(Uri.parse(article.url))) {
-      throw Exception('Could not launch ${article.url}');
+    if (!await launchUrl(Uri.parse(article.sourceUrl))) {
+      throw Exception('Could not launch ${article.sourceUrl}');
     }
   }
 
@@ -22,7 +24,8 @@ class ArticleScreen extends StatelessWidget {
     List<Widget> children = [];
     children.add(Container(
         margin: const EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 0.0),
-        child: ArticleSource(name: article.source.name, url: article.url)));
+        child:
+            ArticleSource(name: article.sourceName, url: article.sourceUrl)));
     children.add(Container(
         margin: const EdgeInsets.fromLTRB(24.0, 12.0, 24.0, 8.0),
         child: Text(
@@ -56,6 +59,23 @@ class ArticleScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(article.title,
               style: const TextStyle(fontWeight: FontWeight.w600)),
+          actions: [
+            BlocBuilder<FavoriteNewsCubit, FavoriteNewsResource>(
+              builder: (context, resource) {
+                var favorite =
+                    resource.data?.newsId.contains(article.id) ?? false;
+                return IconButton(
+                    icon: favorite
+                        ? const Icon(Icons.star, size: 28.0)
+                        : const Icon(Icons.star_outline, size: 28.0),
+                    onPressed: () {
+                      favorite
+                          ? context.read<FavoriteNewsCubit>().dislike(article)
+                          : context.read<FavoriteNewsCubit>().like(article);
+                    });
+              },
+            ),
+          ],
           backgroundColor: themeColors.contentBackground,
           foregroundColor: themeColors.contentForeground,
         ),

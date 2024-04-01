@@ -14,33 +14,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ArticleSourceModel _$ArticleSourceModelFromJson(Map<String, dynamic> json) {
-  return _ArticleSourceModel.fromJson(json);
+ApiArticleSource _$ApiArticleSourceFromJson(Map<String, dynamic> json) {
+  return _ApiArticleSource.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ArticleSourceModel {
+mixin _$ApiArticleSource {
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArticleSourceModelCopyWith<ArticleSourceModel> get copyWith =>
+  $ApiArticleSourceCopyWith<ApiArticleSource> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArticleSourceModelCopyWith<$Res> {
-  factory $ArticleSourceModelCopyWith(
-          ArticleSourceModel value, $Res Function(ArticleSourceModel) then) =
-      _$ArticleSourceModelCopyWithImpl<$Res, ArticleSourceModel>;
+abstract class $ApiArticleSourceCopyWith<$Res> {
+  factory $ApiArticleSourceCopyWith(
+          ApiArticleSource value, $Res Function(ApiArticleSource) then) =
+      _$ApiArticleSourceCopyWithImpl<$Res, ApiArticleSource>;
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class _$ArticleSourceModelCopyWithImpl<$Res, $Val extends ArticleSourceModel>
-    implements $ArticleSourceModelCopyWith<$Res> {
-  _$ArticleSourceModelCopyWithImpl(this._value, this._then);
+class _$ApiArticleSourceCopyWithImpl<$Res, $Val extends ApiArticleSource>
+    implements $ApiArticleSourceCopyWith<$Res> {
+  _$ApiArticleSourceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -62,22 +62,22 @@ class _$ArticleSourceModelCopyWithImpl<$Res, $Val extends ArticleSourceModel>
 }
 
 /// @nodoc
-abstract class _$$ArticleSourceModelImplCopyWith<$Res>
-    implements $ArticleSourceModelCopyWith<$Res> {
-  factory _$$ArticleSourceModelImplCopyWith(_$ArticleSourceModelImpl value,
-          $Res Function(_$ArticleSourceModelImpl) then) =
-      __$$ArticleSourceModelImplCopyWithImpl<$Res>;
+abstract class _$$ApiArticleSourceImplCopyWith<$Res>
+    implements $ApiArticleSourceCopyWith<$Res> {
+  factory _$$ApiArticleSourceImplCopyWith(_$ApiArticleSourceImpl value,
+          $Res Function(_$ApiArticleSourceImpl) then) =
+      __$$ApiArticleSourceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$ArticleSourceModelImplCopyWithImpl<$Res>
-    extends _$ArticleSourceModelCopyWithImpl<$Res, _$ArticleSourceModelImpl>
-    implements _$$ArticleSourceModelImplCopyWith<$Res> {
-  __$$ArticleSourceModelImplCopyWithImpl(_$ArticleSourceModelImpl _value,
-      $Res Function(_$ArticleSourceModelImpl) _then)
+class __$$ApiArticleSourceImplCopyWithImpl<$Res>
+    extends _$ApiArticleSourceCopyWithImpl<$Res, _$ApiArticleSourceImpl>
+    implements _$$ApiArticleSourceImplCopyWith<$Res> {
+  __$$ApiArticleSourceImplCopyWithImpl(_$ApiArticleSourceImpl _value,
+      $Res Function(_$ApiArticleSourceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$ArticleSourceModelImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$ArticleSourceModelImpl(
+    return _then(_$ApiArticleSourceImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -96,27 +96,27 @@ class __$$ArticleSourceModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ArticleSourceModelImpl
+class _$ApiArticleSourceImpl
     with DiagnosticableTreeMixin
-    implements _ArticleSourceModel {
-  _$ArticleSourceModelImpl({required this.name});
+    implements _ApiArticleSource {
+  _$ApiArticleSourceImpl({required this.name});
 
-  factory _$ArticleSourceModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ArticleSourceModelImplFromJson(json);
+  factory _$ApiArticleSourceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApiArticleSourceImplFromJson(json);
 
   @override
   final String name;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ArticleSourceModel(name: $name)';
+    return 'ApiArticleSource(name: $name)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ArticleSourceModel'))
+      ..add(DiagnosticsProperty('type', 'ApiArticleSource'))
       ..add(DiagnosticsProperty('name', name));
   }
 
@@ -124,7 +124,7 @@ class _$ArticleSourceModelImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArticleSourceModelImpl &&
+            other is _$ApiArticleSourceImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -135,41 +135,41 @@ class _$ArticleSourceModelImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArticleSourceModelImplCopyWith<_$ArticleSourceModelImpl> get copyWith =>
-      __$$ArticleSourceModelImplCopyWithImpl<_$ArticleSourceModelImpl>(
+  _$$ApiArticleSourceImplCopyWith<_$ApiArticleSourceImpl> get copyWith =>
+      __$$ApiArticleSourceImplCopyWithImpl<_$ApiArticleSourceImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ArticleSourceModelImplToJson(
+    return _$$ApiArticleSourceImplToJson(
       this,
     );
   }
 }
 
-abstract class _ArticleSourceModel implements ArticleSourceModel {
-  factory _ArticleSourceModel({required final String name}) =
-      _$ArticleSourceModelImpl;
+abstract class _ApiArticleSource implements ApiArticleSource {
+  factory _ApiArticleSource({required final String name}) =
+      _$ApiArticleSourceImpl;
 
-  factory _ArticleSourceModel.fromJson(Map<String, dynamic> json) =
-      _$ArticleSourceModelImpl.fromJson;
+  factory _ApiArticleSource.fromJson(Map<String, dynamic> json) =
+      _$ApiArticleSourceImpl.fromJson;
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$ArticleSourceModelImplCopyWith<_$ArticleSourceModelImpl> get copyWith =>
+  _$$ApiArticleSourceImplCopyWith<_$ApiArticleSourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
-  return _ArticleModel.fromJson(json);
+ApiArticle _$ApiArticleFromJson(Map<String, dynamic> json) {
+  return _ApiArticle.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ArticleModel {
+mixin _$ApiArticle {
   String get title => throw _privateConstructorUsedError;
-  ArticleSourceModel get source => throw _privateConstructorUsedError;
+  ApiArticleSource get source => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String? get publishedAt => throw _privateConstructorUsedError;
@@ -177,31 +177,31 @@ mixin _$ArticleModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArticleModelCopyWith<ArticleModel> get copyWith =>
+  $ApiArticleCopyWith<ApiArticle> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArticleModelCopyWith<$Res> {
-  factory $ArticleModelCopyWith(
-          ArticleModel value, $Res Function(ArticleModel) then) =
-      _$ArticleModelCopyWithImpl<$Res, ArticleModel>;
+abstract class $ApiArticleCopyWith<$Res> {
+  factory $ApiArticleCopyWith(
+          ApiArticle value, $Res Function(ApiArticle) then) =
+      _$ApiArticleCopyWithImpl<$Res, ApiArticle>;
   @useResult
   $Res call(
       {String title,
-      ArticleSourceModel source,
+      ApiArticleSource source,
       String url,
       String description,
       String? publishedAt,
       String? urlToImage});
 
-  $ArticleSourceModelCopyWith<$Res> get source;
+  $ApiArticleSourceCopyWith<$Res> get source;
 }
 
 /// @nodoc
-class _$ArticleModelCopyWithImpl<$Res, $Val extends ArticleModel>
-    implements $ArticleModelCopyWith<$Res> {
-  _$ArticleModelCopyWithImpl(this._value, this._then);
+class _$ApiArticleCopyWithImpl<$Res, $Val extends ApiArticle>
+    implements $ApiArticleCopyWith<$Res> {
+  _$ApiArticleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -226,7 +226,7 @@ class _$ArticleModelCopyWithImpl<$Res, $Val extends ArticleModel>
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as ArticleSourceModel,
+              as ApiArticleSource,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -248,39 +248,39 @@ class _$ArticleModelCopyWithImpl<$Res, $Val extends ArticleModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $ArticleSourceModelCopyWith<$Res> get source {
-    return $ArticleSourceModelCopyWith<$Res>(_value.source, (value) {
+  $ApiArticleSourceCopyWith<$Res> get source {
+    return $ApiArticleSourceCopyWith<$Res>(_value.source, (value) {
       return _then(_value.copyWith(source: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ArticleModelImplCopyWith<$Res>
-    implements $ArticleModelCopyWith<$Res> {
-  factory _$$ArticleModelImplCopyWith(
-          _$ArticleModelImpl value, $Res Function(_$ArticleModelImpl) then) =
-      __$$ArticleModelImplCopyWithImpl<$Res>;
+abstract class _$$ApiArticleImplCopyWith<$Res>
+    implements $ApiArticleCopyWith<$Res> {
+  factory _$$ApiArticleImplCopyWith(
+          _$ApiArticleImpl value, $Res Function(_$ApiArticleImpl) then) =
+      __$$ApiArticleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String title,
-      ArticleSourceModel source,
+      ApiArticleSource source,
       String url,
       String description,
       String? publishedAt,
       String? urlToImage});
 
   @override
-  $ArticleSourceModelCopyWith<$Res> get source;
+  $ApiArticleSourceCopyWith<$Res> get source;
 }
 
 /// @nodoc
-class __$$ArticleModelImplCopyWithImpl<$Res>
-    extends _$ArticleModelCopyWithImpl<$Res, _$ArticleModelImpl>
-    implements _$$ArticleModelImplCopyWith<$Res> {
-  __$$ArticleModelImplCopyWithImpl(
-      _$ArticleModelImpl _value, $Res Function(_$ArticleModelImpl) _then)
+class __$$ApiArticleImplCopyWithImpl<$Res>
+    extends _$ApiArticleCopyWithImpl<$Res, _$ApiArticleImpl>
+    implements _$$ApiArticleImplCopyWith<$Res> {
+  __$$ApiArticleImplCopyWithImpl(
+      _$ApiArticleImpl _value, $Res Function(_$ApiArticleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -293,7 +293,7 @@ class __$$ArticleModelImplCopyWithImpl<$Res>
     Object? publishedAt = freezed,
     Object? urlToImage = freezed,
   }) {
-    return _then(_$ArticleModelImpl(
+    return _then(_$ApiArticleImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -301,7 +301,7 @@ class __$$ArticleModelImplCopyWithImpl<$Res>
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as ArticleSourceModel,
+              as ApiArticleSource,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -324,8 +324,8 @@ class __$$ArticleModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ArticleModelImpl with DiagnosticableTreeMixin implements _ArticleModel {
-  _$ArticleModelImpl(
+class _$ApiArticleImpl with DiagnosticableTreeMixin implements _ApiArticle {
+  _$ApiArticleImpl(
       {required this.title,
       required this.source,
       required this.url,
@@ -333,13 +333,13 @@ class _$ArticleModelImpl with DiagnosticableTreeMixin implements _ArticleModel {
       this.publishedAt,
       this.urlToImage});
 
-  factory _$ArticleModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ArticleModelImplFromJson(json);
+  factory _$ApiArticleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApiArticleImplFromJson(json);
 
   @override
   final String title;
   @override
-  final ArticleSourceModel source;
+  final ApiArticleSource source;
   @override
   final String url;
   @override
@@ -351,14 +351,14 @@ class _$ArticleModelImpl with DiagnosticableTreeMixin implements _ArticleModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ArticleModel(title: $title, source: $source, url: $url, description: $description, publishedAt: $publishedAt, urlToImage: $urlToImage)';
+    return 'ApiArticle(title: $title, source: $source, url: $url, description: $description, publishedAt: $publishedAt, urlToImage: $urlToImage)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ArticleModel'))
+      ..add(DiagnosticsProperty('type', 'ApiArticle'))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('source', source))
       ..add(DiagnosticsProperty('url', url))
@@ -371,7 +371,7 @@ class _$ArticleModelImpl with DiagnosticableTreeMixin implements _ArticleModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArticleModelImpl &&
+            other is _$ApiArticleImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.source, source) || other.source == source) &&
             (identical(other.url, url) || other.url == url) &&
@@ -391,33 +391,33 @@ class _$ArticleModelImpl with DiagnosticableTreeMixin implements _ArticleModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArticleModelImplCopyWith<_$ArticleModelImpl> get copyWith =>
-      __$$ArticleModelImplCopyWithImpl<_$ArticleModelImpl>(this, _$identity);
+  _$$ApiArticleImplCopyWith<_$ApiArticleImpl> get copyWith =>
+      __$$ApiArticleImplCopyWithImpl<_$ApiArticleImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ArticleModelImplToJson(
+    return _$$ApiArticleImplToJson(
       this,
     );
   }
 }
 
-abstract class _ArticleModel implements ArticleModel {
-  factory _ArticleModel(
+abstract class _ApiArticle implements ApiArticle {
+  factory _ApiArticle(
       {required final String title,
-      required final ArticleSourceModel source,
+      required final ApiArticleSource source,
       required final String url,
       required final String description,
       final String? publishedAt,
-      final String? urlToImage}) = _$ArticleModelImpl;
+      final String? urlToImage}) = _$ApiArticleImpl;
 
-  factory _ArticleModel.fromJson(Map<String, dynamic> json) =
-      _$ArticleModelImpl.fromJson;
+  factory _ApiArticle.fromJson(Map<String, dynamic> json) =
+      _$ApiArticleImpl.fromJson;
 
   @override
   String get title;
   @override
-  ArticleSourceModel get source;
+  ApiArticleSource get source;
   @override
   String get url;
   @override
@@ -428,6 +428,6 @@ abstract class _ArticleModel implements ArticleModel {
   String? get urlToImage;
   @override
   @JsonKey(ignore: true)
-  _$$ArticleModelImplCopyWith<_$ArticleModelImpl> get copyWith =>
+  _$$ApiArticleImplCopyWith<_$ApiArticleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

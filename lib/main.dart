@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mipt_flutter_news/screens/home.dart';
-import 'package:mipt_flutter_news/themes/controller.dart';
-import 'package:mipt_flutter_news/themes/themes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mipt_flutter_news/domain/state/favorite.dart';
+import 'package:mipt_flutter_news/domain/state/news.dart';
+import 'package:mipt_flutter_news/internal/init.dart';
+import 'package:mipt_flutter_news/presentation/screens/home.dart';
+import 'package:mipt_flutter_news/presentation/themes/controller.dart';
+import 'package:mipt_flutter_news/presentation/themes/themes.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  configureDependencies();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeController(),
@@ -30,12 +36,17 @@ class App extends StatelessWidget {
         systemNavigationBarColor: Colors.transparent,
         systemNavigationBarContrastEnforced: true,
       ));
-      return MaterialApp(
-        title: 'News',
-        theme: Themes.lightTheme,
-        darkTheme: Themes.darkTheme,
-        themeMode: theme.mode,
-        home: const HomeScreen(),
+      return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => FavoriteNewsCubit()),
+          BlocProvider(create: (_) => NewsCubit()),
+        ],
+        child: MaterialApp(
+            title: 'News',
+            theme: Themes.lightTheme,
+            darkTheme: Themes.darkTheme,
+            themeMode: theme.mode,
+            home: const HomeScreen()),
       );
     });
   }
