@@ -21,7 +21,6 @@ class FavoriteNewsApiService {
   Future<void> likeArticle(ApiFavoriteArticle article) async {
     var db = Localstore.instance;
     db.collection(_collection).doc(article.id.toString()).set(article.toJson());
-    print(await db.collection(_collection).doc(article.id.toString()).get());
   }
 
   Future<void> dislikeArticle(ApiFavoriteArticle article) async {
