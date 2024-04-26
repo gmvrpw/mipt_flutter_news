@@ -2,7 +2,7 @@
 APK-файл для установки доступен во вкладке `Releases`
 
 <p float="left">
-  <img src="/preview/main.jpg" width="330" />
+  <img src="/preview/home.jpg" width="330" />
   <img src="/preview/search_google.jpg" width="330" /> 
   <img src="/preview/search_apple.jpg" width="330" />
   <img src="/preview/language_filter.jpg" width="330" />
