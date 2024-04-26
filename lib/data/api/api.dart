@@ -3,7 +3,10 @@ import 'package:mipt_flutter_news/data/api/service/favorite.dart';
 import 'package:mipt_flutter_news/data/api/service/news_api.dart';
 import 'package:mipt_flutter_news/data/mapper/article.dart';
 import 'package:mipt_flutter_news/data/mapper/favorite_article.dart';
+import 'package:mipt_flutter_news/data/mapper/language_option.dart';
 import 'package:mipt_flutter_news/domain/model/article.dart';
+
+enum LanguageOptions { ru, en, fr }
 
 @lazySingleton
 class Api {
@@ -12,8 +15,11 @@ class Api {
 
   Api(this._newsApiService, this._favoriteNewsApiService);
 
-  Future<List<Article>> getNews() async {
-    return (await _newsApiService.getNews())
+  Future<List<Article>> getNews(
+      {String? query, LanguageOptions? language}) async {
+    return (await _newsApiService.getNews(
+            query: query,
+            language: LanguageOptionMapper.fromSortOption(language)))
         .map((article) => ArticleMapper.fromApi(article))
         .toList();
   }

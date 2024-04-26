@@ -5,6 +5,7 @@ import 'package:mipt_flutter_news/domain/model/article.dart';
 import 'package:mipt_flutter_news/domain/state/favorite.dart';
 import 'package:mipt_flutter_news/presentation/themes/themes.dart';
 import 'package:mipt_flutter_news/presentation/widgets/article_card.dart';
+import 'package:mipt_flutter_news/presentation/widgets/favorite_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ArticleScreen extends StatelessWidget {
@@ -40,16 +41,18 @@ class ArticleScreen extends StatelessWidget {
     if (article.urlToImage != null) {
       children.add(Container(
           margin: const EdgeInsets.symmetric(vertical: 24.0),
-          child: CachedNetworkImage(
-            imageUrl: article.urlToImage!,
-            fit: BoxFit.cover,
-            placeholder: (context, url) =>
-                Container(color: themeColors.imagePlaceholderColor),
-          )));
+          child: Hero(
+              tag: article.urlToImage!,
+              child: CachedNetworkImage(
+                imageUrl: article.urlToImage!,
+                fit: BoxFit.cover,
+                placeholder: (context, url) =>
+                    Container(color: themeColors.imagePlaceholderColor),
+              ))));
     }
     children.add(Container(
         padding: const EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 0.0),
-        child: Text(article.description,
+        child: Text(article.description ?? "",
             style: TextStyle(
                 color: themeColors.contentForeground,
                 fontSize: 18.0,
@@ -57,6 +60,7 @@ class ArticleScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
           title: Text(article.title,
               style: const TextStyle(fontWeight: FontWeight.w600)),
           actions: [
@@ -64,10 +68,9 @@ class ArticleScreen extends StatelessWidget {
               builder: (context, resource) {
                 var favorite =
                     resource.data?.newsId.contains(article.id) ?? false;
-                return IconButton(
-                    icon: favorite
-                        ? const Icon(Icons.star, size: 28.0)
-                        : const Icon(Icons.star_outline, size: 28.0),
+                return FavoriteButton(
+                    favorite: favorite,
+                    size: 28.0,
                     onPressed: () {
                       favorite
                           ? context.read<FavoriteNewsCubit>().dislike(article)

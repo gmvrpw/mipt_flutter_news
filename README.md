@@ -3,11 +3,19 @@ APK-файл для установки доступен во вкладке `Rel
 
 <p float="left">
   <img src="/preview/main.jpg" width="330" />
-  <img src="/preview/details.jpg" width="330" /> 
-  <img src="/preview/favorite.jpg" width="330" />
+  <img src="/preview/search_google.jpg" width="330" /> 
+  <img src="/preview/search_apple.jpg" width="330" />
+  <img src="/preview/language_filter.jpg" width="330" />
 </p>
 
 ## Фичи
+
+### Задание 3
+- [x] Анимации: Использованы Hero анимации и Animated виджеты
+- [x] Использованы Sliver-ы в шапке
+- [x] Реализован фильтр новостей по поиску и языку
+- [x] Супер-крутая аницая добавления в избранное
+- [x] Проверки и сборка на CI
 
 ### Задание 2
 - [x] Реализован механизм сохранения избранных новостных статей

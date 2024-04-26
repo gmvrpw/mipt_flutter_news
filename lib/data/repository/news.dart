@@ -10,8 +10,8 @@ class NewsRepository implements AbstractNewsRepository {
   NewsRepository(this._api);
 
   @override
-  Future<List<Article>> getNews() {
-    return _api.getNews();
+  Future<List<Article>> getNews({String? query, LanguageOptions? language}) {
+    return _api.getNews(query: query, language: language);
   }
 
   @override

@@ -171,7 +171,7 @@ mixin _$ApiArticle {
   String get title => throw _privateConstructorUsedError;
   ApiArticleSource get source => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String? get publishedAt => throw _privateConstructorUsedError;
   String? get urlToImage => throw _privateConstructorUsedError;
 
@@ -191,7 +191,7 @@ abstract class $ApiArticleCopyWith<$Res> {
       {String title,
       ApiArticleSource source,
       String url,
-      String description,
+      String? description,
       String? publishedAt,
       String? urlToImage});
 
@@ -214,7 +214,7 @@ class _$ApiArticleCopyWithImpl<$Res, $Val extends ApiArticle>
     Object? title = null,
     Object? source = null,
     Object? url = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? publishedAt = freezed,
     Object? urlToImage = freezed,
   }) {
@@ -231,10 +231,10 @@ class _$ApiArticleCopyWithImpl<$Res, $Val extends ApiArticle>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
@@ -267,7 +267,7 @@ abstract class _$$ApiArticleImplCopyWith<$Res>
       {String title,
       ApiArticleSource source,
       String url,
-      String description,
+      String? description,
       String? publishedAt,
       String? urlToImage});
 
@@ -289,7 +289,7 @@ class __$$ApiArticleImplCopyWithImpl<$Res>
     Object? title = null,
     Object? source = null,
     Object? url = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? publishedAt = freezed,
     Object? urlToImage = freezed,
   }) {
@@ -306,10 +306,10 @@ class __$$ApiArticleImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
@@ -329,7 +329,7 @@ class _$ApiArticleImpl with DiagnosticableTreeMixin implements _ApiArticle {
       {required this.title,
       required this.source,
       required this.url,
-      required this.description,
+      this.description,
       this.publishedAt,
       this.urlToImage});
 
@@ -343,7 +343,7 @@ class _$ApiArticleImpl with DiagnosticableTreeMixin implements _ApiArticle {
   @override
   final String url;
   @override
-  final String description;
+  final String? description;
   @override
   final String? publishedAt;
   @override
@@ -407,7 +407,7 @@ abstract class _ApiArticle implements ApiArticle {
       {required final String title,
       required final ApiArticleSource source,
       required final String url,
-      required final String description,
+      final String? description,
       final String? publishedAt,
       final String? urlToImage}) = _$ApiArticleImpl;
 
@@ -421,7 +421,7 @@ abstract class _ApiArticle implements ApiArticle {
   @override
   String get url;
   @override
-  String get description;
+  String? get description;
   @override
   String? get publishedAt;
   @override

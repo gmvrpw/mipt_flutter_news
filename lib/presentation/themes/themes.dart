@@ -73,7 +73,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
 }
 
 class Themes {
-  static ThemeData lightTheme = ThemeData.light().copyWith(
+  static ThemeData lightTheme = ThemeData.light(useMaterial3: false).copyWith(
       appBarTheme: const AppBarTheme(
           systemOverlayStyle:
               SystemUiOverlayStyle(statusBarBrightness: Brightness.dark)),
@@ -89,7 +89,7 @@ class Themes {
             imagePlaceholderColor: Colors.grey[100]),
       ]);
 
-  static ThemeData darkTheme = ThemeData.light().copyWith(
+  static ThemeData darkTheme = ThemeData.light(useMaterial3: false).copyWith(
       appBarTheme: const AppBarTheme(
           systemOverlayStyle:
               SystemUiOverlayStyle(statusBarBrightness: Brightness.dark)),

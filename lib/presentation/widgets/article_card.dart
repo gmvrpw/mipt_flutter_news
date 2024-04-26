@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mipt_flutter_news/domain/model/article.dart';
 import 'package:mipt_flutter_news/domain/state/favorite.dart';
 import 'package:mipt_flutter_news/presentation/themes/themes.dart';
+import 'package:mipt_flutter_news/presentation/widgets/favorite_button.dart';
 
 class ArticleImage extends StatelessWidget {
   const ArticleImage({required this.url, super.key});
@@ -71,7 +72,9 @@ class ArticleCard extends StatelessWidget {
     if (article.urlToImage != null) {
       children.add(Container(
           margin: const EdgeInsets.only(bottom: 16.0),
-          child: ArticleImage(url: article.urlToImage!)));
+          child: Hero(
+              tag: article.urlToImage!,
+              child: ArticleImage(url: article.urlToImage!))));
     }
     children.add(Container(
         padding: const EdgeInsets.only(bottom: 0.0),
@@ -91,10 +94,8 @@ class ArticleCard extends StatelessWidget {
             builder: (context, resource) {
               var favorite =
                   resource.data?.newsId.contains(article.id) ?? false;
-              return IconButton(
-                  icon: favorite
-                      ? const Icon(Icons.star)
-                      : const Icon(Icons.star_outline),
+              return FavoriteButton(
+                  favorite: favorite,
                   onPressed: () {
                     favorite
                         ? context.read<FavoriteNewsCubit>().dislike(article)

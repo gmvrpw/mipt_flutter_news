@@ -23,7 +23,7 @@ _$ApiArticleImpl _$$ApiArticleImplFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       source: ApiArticleSource.fromJson(json['source'] as Map<String, dynamic>),
       url: json['url'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       publishedAt: json['publishedAt'] as String?,
       urlToImage: json['urlToImage'] as String?,
     );

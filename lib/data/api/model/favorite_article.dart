@@ -10,7 +10,7 @@ class ApiFavoriteArticle with _$ApiFavoriteArticle {
     required String sourceName,
     required String sourceUrl,
     required String title,
-    required String description,
+    String? description,
     String? publishedAt,
     String? urlToImage,
   }) = _ApiFavoriteArticle;

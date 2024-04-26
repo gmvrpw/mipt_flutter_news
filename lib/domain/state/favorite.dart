@@ -1,20 +1,25 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mipt_flutter_news/domain/model/article.dart';
 import 'package:mipt_flutter_news/domain/state/resource.dart';
 import 'package:mipt_flutter_news/internal/dependencies.dart';
 import 'package:mipt_flutter_news/internal/init.dart';
 
 class FavoriteNewsData {
-  List<Article> news;
-  Set<int> newsId;
-  FavoriteNewsData({this.news = const [], this.newsId = const {}});
+  const FavoriteNewsData({this.news = const [], this.newsId = const {}});
+
+  final List<Article> news;
+  final Set<int> newsId;
 }
 
-typedef FavoriteNewsResource = Resource<FavoriteNewsData>;
+class FavoriteNewsResource extends Resource<FavoriteNewsData> {
+  const FavoriteNewsResource({super.data, super.loading});
+}
 
-class FavoriteNewsCubit extends ResourceCubit<FavoriteNewsData> {
-  @override
+class FavoriteNewsCubit extends Cubit<FavoriteNewsResource> {
+  FavoriteNewsCubit() : super(const FavoriteNewsResource());
+
   Future<void> fetch() {
-    emit(FavoriteNewsResource(loading: true));
+    emit(const FavoriteNewsResource(loading: true));
     return Future(() async {
       var news =
           await getIt.get<Dependencies>().newsRepository.getFavoriteNews();

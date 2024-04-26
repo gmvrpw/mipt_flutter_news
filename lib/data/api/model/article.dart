@@ -18,7 +18,7 @@ class ApiArticle with _$ApiArticle {
     required String title,
     required ApiArticleSource source,
     required String url,
-    required String description,
+    String? description,
     String? publishedAt,
     String? urlToImage,
   }) = _ApiArticle;

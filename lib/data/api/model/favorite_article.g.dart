@@ -13,7 +13,7 @@ _$ApiFavoriteArticleImpl _$$ApiFavoriteArticleImplFromJson(
       sourceName: json['sourceName'] as String,
       sourceUrl: json['sourceUrl'] as String,
       title: json['title'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       publishedAt: json['publishedAt'] as String?,
       urlToImage: json['urlToImage'] as String?,
     );

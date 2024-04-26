@@ -9,7 +9,7 @@ class Article with _$Article {
     required String sourceName,
     required String sourceUrl,
     required String title,
-    required String description,
+    String? description,
     String? publishedAt,
     String? urlToImage,
   }) = _Article;
